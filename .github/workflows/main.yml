@@ -1,4 +1,4 @@
-name: CI
+name: Windows
 
 on:
   push:
@@ -10,7 +10,9 @@ jobs:
     steps:
       - name: Install Visual Studio
         run: |
-          choco install -y visualstudio2022community
+          choco install -y visualstudio2022community --package-parameters "--includeRecommended --includeOptional --add Microsoft.VisualStudio.Workload.NetDesktop"
+      - name: Install VS Code
+        run: choco install -y vscode
       - name: Download ngrok
         run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
       - name: Extract ngrok
