@@ -8,11 +8,9 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - name: Download Visual Studio
-        run: Invoke-WebRequest https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community -OutFile vs_community__f5f36d2b0a0a47c197d4b89db307f5db.exe
       - name: Install Visual Studio
-        run: .\vs_community__f5f36d2b0a0a47c197d4b89db307f5db.exe --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2022\Community" --quiet --wait --norestart
-        shell: cmd
+        run: |
+          choco install -y visualstudio2022community
       - name: Download ngrok
         run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
       - name: Extract ngrok
