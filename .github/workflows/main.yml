@@ -9,9 +9,9 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Download Visual Studio
-        run: Invoke-WebRequest https://download.visualstudio.microsoft.com/download/pr/982db8b2-559c-4282-a026-c19b78f8d7ae/5ea5f5ec5eb5fdaf8e7a09aa6c956b6eb1f6c5c6d5e5b5d5e17d5e9f6d5c5f5e/en_visual_studio_community_2022_rc_web_Installer.exe -OutFile vs_community.exe
+        run: Invoke-WebRequest https://download.visualstudio.microsoft.com/download/pr/014120d7-3b3e-4399-a673-c7d60e3e918b/0c64d38d1b421b71453c21d13e5c24b5/vs_Community.exe -OutFile vs_community.exe
       - name: Install Visual Studio
-        run: .\vs_community.exe --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2022\Community" --quiet --wait --norestart
+        run: .\vs_community.exe --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community" --quiet --wait --norestart
         shell: cmd
       - name: Download ngrok
         run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
