@@ -9,7 +9,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Download Visual Studio
-        run: Invoke-WebRequest https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false -OutFile VisualStudioSetup.exe
+        run: Invoke-WebRequest https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030 -OutFile VisualStudioSetup.exe
       - name: Install Visual Studio
         run: .\VisualStudioSetup.exe --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2022\Community" --quiet --wait --norestart
         shell: cmd
