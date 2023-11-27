@@ -8,9 +8,6 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - name: Install Visual Studio
-        run: |
-          choco install -y visualstudio2022community --package-parameters "--includeRecommended --includeOptional --add Microsoft.VisualStudio.Workload.NetDesktop"
       - name: Install VS Code
         run: choco install -y vscode
       - name: Download ngrok
